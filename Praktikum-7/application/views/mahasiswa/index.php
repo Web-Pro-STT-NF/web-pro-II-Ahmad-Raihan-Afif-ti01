@@ -5,7 +5,7 @@
            <div class="container-fluid">
                <div class="row mb-2">
                    <div class="col-sm-6">
-                       <h1>   Daftar Mahasiswa</h1>
+                       <h1> Daftar Mahasiswa</h1>
                    </div>
                    <div class="col-sm-6">
                        <ol class="breadcrumb float-sm-right">
@@ -39,48 +39,50 @@
                        <h3>
                            Daftar Mahasiswa
                        </h3>
-                       <table class="table">
-                           <thead>
-                               <tr>
-                                   <th>#</th>
-                                   <th>NIM</th>
-                                   <th>Nama</th>
-                                   <th>Gender</th>
-                                   <th>Tempat Lahir</th>
-                                   <th>Tanggal Lahir</th>
-                                   <th>IPK</th>
-                                   <th>Predikat</th>
-                               </tr>
-                           </thead>
-                           <tbody>
-                               <?php
-                                $nomor = 1;
-                                foreach ($list_mhs as $row) {
-                                ?>
+                       <div class="table-responsive">
+                           <table class="table table-striped table-hover table-sm">
+                               <thead>
                                    <tr>
-                                       <td><?= $nomor ?></td>
-                                       <td><?= $row->nim ?></td>
-                                       <td><?= $row->nama ?></td>
-                                       <td><?= $row->gender ?></td>
-                                       <td><?= $row->tmp_lahir ?></td>
-                                       <td><?= $row->tgl_lahir ?></td>
-                                       <td><?= $row->ipk ?></td>
-                                       <td><?= $row->prodi_kode ?></td>
-                    
+                                       <th>#</th>
+                                       <th>NIM</th>
+                                       <th>Nama</th>
+                                       <th>Gender</th>
+                                       <th>Tempat Lahir</th>
+                                       <th>Tanggal Lahir</th>
+                                       <th>IPK</th>
+                                       <th>Prodi</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <?php
+                                    $nomor = 1;
+                                    foreach ($list_mhs as $row) {
+                                    ?>
+                                       <tr>
+                                           <td><?= $nomor ?></td>
+                                           <td><?= $row->nim ?></td>
+                                           <td><?= $row->nama ?></td>
+                                           <td><?= $row->gender ?></td>
+                                           <td><?= $row->tmp_lahir ?></td>
+                                           <td><?= $row->tgl_lahir ?></td>
+                                           <td><?= $row->ipk ?></td>
+                                           <td><?= $row->prodi_kode ?></td>
 
-                                       <!-- <td><?= $nomor ?></td>
+
+                                           <!-- <td><?= $nomor ?></td>
                                        <td><?= $mhs->nim ?></td>
                                        <td><?= $mhs->nama ?></td>
                                        <td><?= $mhs->gender ?></td>
                                        <td><?= $mhs->ipk ?></td> -->
-                                      
-                                   </tr>
-                               <?php
-                                    $nomor++;
-                                }
-                                ?>
-                           </tbody>
+
+                                       </tr>
+                                   <?php
+                                        $nomor++;
+                                    }
+                                    ?>
+                               </tbody>
                            </table>
+                       </div>
                        <a class="btn btn-primary" href="<?php echo base_url('index.php/mahasiswa/create') ?>" role="button">Create Mahasiswa</a>
                        <table class="table">
                        </table>

@@ -39,35 +39,49 @@
                        <h3>
                            Daftar Dosen
                        </h3>
-                       <table class="table">
-                           <thead>
-                               <tr>
-                                   <th>#</th>
-                                   <th>NIDN</th>
-                                   <th>Nama</th>
-                                   <th>Gender</th>
-                                   <th>Pendidikan</th>
-                               </tr>
-                           </thead>
-                           <tbody>
-                               <?php
-                                $nomor = 1;
-                                foreach ($list_dsn as $dsn) {
-                                ?>
+                       <div class="table-responsive">
+                           <table class="table table-striped table-hover table-sm">
+                               <thead>
                                    <tr>
-                                       <td><?= $nomor ?></td>
+                                       <th>#</th>
+                                       <th>NIDN</th>
+                                       <th>Nama</th>
+                                       <th>Gender</th>
+                                       <th>Tanggal Lahir</th>
+                                       <th>Tempat Lahir</th>
+                                       <th>Pendidikan</th>
+                                       <th>Prodi</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <?php
+                                    $nomor = 1;
+                                    foreach ($list_dsn as $row) {
+                                    ?>
+                                       <tr>
+                                           <td><?= $nomor ?></td>
+                                           <td><?= $row->nidn ?></td>
+                                           <td><?= $row->nama ?></td>
+                                           <td><?= $row->gender ?></td>
+                                           <td><?= $row->tgl_lahir ?></td>
+                                           <td><?= $row->tmp_lahir ?></td>
+                                           <td><?= $row->pendidikan_akhir ?></td>
+                                           <td><?= $row->prodi_kode ?></td>
+
+                                           <!-- <td><?= $nomor ?></td>
                                        <td><?= $dsn->nidn ?></td>
                                        <td><?= $dsn->nama ?></td>
                                        <td><?= $dsn->gender ?></td>
-                                       <td><?= $dsn->pendidikan ?></td>
+                                       <td><?= $dsn->pendidikan ?></td> -->
 
-                                   </tr>
-                               <?php
-                                    $nomor++;
-                                }
-                                ?>
-                           </tbody>
-                       </table>
+                                       </tr>
+                                   <?php
+                                        $nomor++;
+                                    }
+                                    ?>
+                               </tbody>
+                           </table>
+                       </div>
                    </div>
                </div>
                <!-- /.card-body -->
